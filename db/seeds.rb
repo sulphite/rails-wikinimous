@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Article.all.each(&:destroy)
 10.times do
-  Article.create(title: Faker::Books::Lovecraft.tome, content: Faker::Books::Lovecraft.paragraphs(number: 2))
+  Article.create(title: Faker::Quotes::Shakespeare.king_richard_iii_quote, content: Faker::Books::Lovecraft.paragraphs(number: 2).join)
 end
